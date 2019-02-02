@@ -104,8 +104,6 @@ function academia(params) {
 
     request(opciones, async function(error, response, html) {
       if (!error && response.statusCode == 200) {
-        console.log(html);
-        
         var $ = cheerio.load(html);
         try {
           var tipos = await getTipos(opciones.jar);

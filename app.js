@@ -25,9 +25,9 @@ app.use(function(req, res, next) {
 
 app.use(function (err, req, res, next) {
   console.error('Error:', err);
-  /*if (req.app.get('env') !== 'development') {
+  if (req.app.get('env') !== 'development') {
       delete err.stack;
-  }*/
+  }
 
   res.status(err.codigoEstadoHttp || 500).send(err);
 });
